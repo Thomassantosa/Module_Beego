@@ -1,5 +1,4 @@
-# go-crud-beego-api
-Repository for CRUD operations using GO and Beego
+# Endpoint lists
 
 * `GET /api/v1/user` Gets All Users
 * `POST /api/v1/user` Adds a new user
