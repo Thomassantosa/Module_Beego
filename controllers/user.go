@@ -22,6 +22,12 @@ func (uc *UserController) GetAllUsers() {
 // AddNewUser adds new user
 func (uc *UserController) AddNewUser() {
 	var u models.User
+	u.Name = uc.GetString("Name")
+	u.Age, _ = uc.GetInt("Age")
+	u.Address = uc.GetString("Address")
+	u.Email = uc.GetString("Email")
+	u.Password = uc.GetString("Password")
+
 	json.Unmarshal(uc.Ctx.Input.RequestBody, &u)
 	user := models.InsertOneUser(u)
 	uc.Data["json"] = user
@@ -31,6 +37,13 @@ func (uc *UserController) AddNewUser() {
 // UpdateUser updates an existing user
 func (uc *UserController) UpdateUser() {
 	var u models.User
+	u.Id, _ = uc.GetInt("Id")
+	u.Name = uc.GetString("Name")
+	u.Age, _ = uc.GetInt("Age")
+	u.Address = uc.GetString("Address")
+	u.Email = uc.GetString("Email")
+	u.Password = uc.GetString("Password")
+
 	json.Unmarshal(uc.Ctx.Input.RequestBody, &u)
 	user := models.UpdateUser(u)
 	uc.Data["json"] = user
