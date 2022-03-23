@@ -35,7 +35,7 @@ func main() {
 	orm.RegisterDataBase("default", "mysql", dbString)
 
 	// autosync
-	// db alias
+	// db aliasx
 	name := "default"
 
 	// drop table and re-create
